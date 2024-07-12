@@ -12,9 +12,9 @@ clean:
 docker-build:
 	docker build -f build/Dockerfile -t receipt-processor:latest .
 docker-run:
-	${COMPOSE} run --service-ports --rm -w /app app sh -c "go run cmd/app/main.go"
+	${COMPOSE} up app
 docker-test:
-	${COMPOSE} -f deploy/compose.yaml run --service-ports --rm -w /app app sh -c "go test ./..."
+	${COMPOSE} -f deploy/compose.yaml run --rm -w /app app sh -c "go test ./..."
 docker-teardown:
 	${COMPOSE} down
 

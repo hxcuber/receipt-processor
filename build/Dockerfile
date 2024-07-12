@@ -5,3 +5,5 @@ WORKDIR app/
 COPY .. .
 
 RUN go mod download && go mod verify
+
+CMD ["sh", "-c", "go run cmd/app/main.go"]
