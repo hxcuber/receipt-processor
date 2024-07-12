@@ -8,35 +8,35 @@ git clone git@github.com:hxcuber/receipt-processor.git
 ```
 
 # Build
-Local
+**Local**
 ```sh
 make build-local
 ```
 
-Docker
+**Docker**
 ```sh
 make build-docker
 ```
 
 # Run
-Local 
+**Local** 
 ```shell
 make run-local
 ```
 
-Docker
+**Docker**
 ```shell
 make run-docker
 ```
 
 # Test
 
-Local
+**Local**
 ```shell
 make test-local
 ```
 
-Docker
+**Docker**
 ```shell
 make test-docker
 ```
