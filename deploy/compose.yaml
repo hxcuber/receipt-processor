@@ -1,0 +1,8 @@
+services:
+  app:
+    container_name: receipt-processor-api
+    image: receipt-processor:latest
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../../receipt-processor:/app:cached

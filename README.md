@@ -1,3 +1,46 @@
+# Prequesites
+- [Git](https://git-scm.com/downloads)
+- [Docker](https://docs.docker.com/get-docker/)
+
+# Installation
+```sh
+git clone git@github.com:hxcuber/receipt-processor.git
+```
+
+# Build
+Local
+```sh
+make build-local
+```
+
+Docker
+```sh
+make build-docker
+```
+
+# Run
+Local 
+```shell
+make run-local
+```
+
+Docker
+```shell
+make run-docker
+```
+
+# Test
+
+Local
+```shell
+make test-local
+```
+
+Docker
+```shell
+make test-docker
+```
+
 # Receipt Processor
 
 Build a webservice that fulfils the documented API. The API is described below. A formal definition is provided 
