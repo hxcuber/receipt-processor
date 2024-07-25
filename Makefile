@@ -1,4 +1,5 @@
-COMPOSE := docker compose -f deploy/compose.yaml
+PROJECT_NAME := receipt-processor
+COMPOSE := docker compose -f deploy/compose.yaml -p ${PROJECT_NAME}
 
 local-build:
 	go build ./cmd/app/main.go
@@ -10,11 +11,11 @@ clean:
 	go clean && rm main
 
 docker-build:
-	docker build -f build/Dockerfile -t receipt-processor:latest .
+	docker build -f build/Dockerfile -t ${PROJECT_NAME}-api:latest .
 docker-run:
 	${COMPOSE} up app
 docker-test:
-	${COMPOSE} -f deploy/compose.yaml run --rm -w /app app sh -c "go test ./..."
+	${COMPOSE} up test
 docker-teardown:
 	${COMPOSE} down
 

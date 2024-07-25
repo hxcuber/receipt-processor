@@ -4,5 +4,7 @@ services:
     image: receipt-processor:latest
     ports:
       - '3000:3000'
-    volumes:
-      - ../../receipt-processor:/app:cached
+  test:
+    container_name: receipt-processor-test
+    image: receipt-processor:latest
+    command: ["sh", "-c", "go test ./..."]

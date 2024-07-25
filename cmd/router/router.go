@@ -19,8 +19,8 @@ func (rtr Router) Handler() http.Handler {
 		middleware.Logger,       // log relationship request calls
 		middleware.StripSlashes, // match paths with a trailing slash, strip it, and continue routing through the mux
 		middleware.Recoverer,    // recover from panics without crashing server
-		middleware.RequestID,
-		middleware.RealIP,
+		middleware.RequestID,    // unique request ids for logging
+		middleware.RealIP,       // differentiate hosts
 	)
 
 	r.Route("/receipts", func(r chi.Router) {
